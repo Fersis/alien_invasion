@@ -11,3 +11,5 @@ TO START GAME:
   run alien_invasion.py   
   use left and right key to control the ship  
   use space key to fire
+
+![Image Text](https://github.com/Fersis/alien_invasion/blob/master/alien_invasion.png)
