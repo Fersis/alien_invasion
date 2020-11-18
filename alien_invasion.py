@@ -7,6 +7,7 @@ from galaxy import Galaxy
 from ship import Ship
 from button import Button
 from scoreboard import Scoreboard
+from sound import Sound
 
 
 def run_game():
@@ -39,17 +40,20 @@ def run_game():
     # create a score board
     scoreboard = Scoreboard(settings, screen, stats)
 
+    # create sound buffer
+    sound = Sound()
+
     # begin game main while
     while True:
         check_events(settings, screen, stats, ship,
-                     bullets, aliens, play_button, scoreboard)
+                     bullets, aliens, play_button, scoreboard, sound)
 
         if stats.game_active:
             ship.update_location()
             update_bullets(settings, screen, stats, ship,
-                           bullets, aliens, scoreboard)
+                           bullets, aliens, scoreboard, sound)
             update_aliens(settings, screen, stats, ship,
-                          bullets, aliens, scoreboard)
+                          bullets, aliens, scoreboard, sound)
 
         update_screen(settings, screen, stats, galaxy, ship,
                       bullets, aliens, play_button, scoreboard)
